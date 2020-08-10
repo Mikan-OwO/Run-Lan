@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta property="og:title" content="JavaScript | Run-Lan" />
+  <meta property="og:description" content="JavaScriptをweb上で簡単に実行。" />
+  <title>Run-Lan JavaScript</title>
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="stylesheet" href="/styles/js.css" />
+  <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script defer type="text/javascript" src="/scripts/common.js"></script>
+  <script defer type="text/javascript" src="/scripts/run.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-logo">Run-Lan</div>
+    <div class="header-list">
+      <ul>
+        <li><a href="/">Top</a></li>
+        <li>Run-Lanとは</li>
+        <li><a href="https://scrapbox.io/mikan-room">他サイト</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="copy-container">
+      <h1>JavaScript</h1>
+      <h2>Runボタンを押して実行</h2>
+    </div>
+    <div class="content">
+      <div class="run">
+        <textarea name="code" class="code" placeholder="コードを入力" onfocus="adustTextbox(this);"
+          oninput="adustTextbox(this);" onchange="adustTextbox(this);"></textarea>
+        <input type="button" id="btn1" class="run-btn" value="Run" />
+        <br />
+        <input type="text" id="result" class="result-content" placeholder="実行結果" readonly />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Run-Lan</div>
+  </div>
+</body>
+
+</html>

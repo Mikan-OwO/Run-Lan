@@ -1,6 +1,6 @@
 $("#btn1").on("click", async function() {
   const test = $("textarea[name='code']").val();
-  fetch("/js", {
+  fetch("https://run-lan.herokuapp.com/", {
     method: "POST",
     headers: {
       "Content-Type": "text/javascript; charset=utf-8"
