@@ -14,8 +14,11 @@ app.listen(port, () => {
 app.post("/js", async (req, res) => {
   const code = req.body;
   const vm = new VM({ timeout: 5000 });
+  
   res.append("content-type", "application/json");
-  //実行
+  res.header("Access-Control-Allow-Origin", "https://mikan-owo.github.io");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
   try {
     const result = await vm.run(code);
     res.send({ result: String(result) });
