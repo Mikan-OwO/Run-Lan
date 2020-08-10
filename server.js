@@ -15,7 +15,7 @@ app.post("/js", async (req, res) => {
   const code = req.body;
   const vm = new VM({ timeout: 5000 });
   res.append("Content-Type", "application/json");
-  res.append("Access-Control-Allow-Origin","https://mikan-owo.github.io");
+  res.append("Access-Control-Allow-Origin", "https://mikan-owo.github.io");
   //実行
   try {
     const result = await vm.run(code);
