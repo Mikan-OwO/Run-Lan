@@ -3,7 +3,7 @@ $("#btn1").on("click", async function() {
   fetch("https://run-lan.herokuapp.com/js", {
     method: "POST",
     headers: {
-      "Content-Type": "text/javascript; charset=utf-8"
+      "Content-Type": "text/plain; charset=utf-8"
     },
     body: test
   })
