@@ -1,14 +1,6 @@
-body {
-  font-family: "Lucida Grande";
-}
-
 img {
   height: 200px;
   width: 200px;
-}
-
-.main {
-  padding: 80px 40px;
 }
 
 .copy-container h1 {

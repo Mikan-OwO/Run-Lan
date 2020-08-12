@@ -1,8 +1,16 @@
+body {
+  font-family: "Lucida Grande";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-block-start: auto;
+  margin-block-end: auto;
+}
+
 .header {
   position: fixed;
   top: 0px;
   left: 0px;
-  height: 50px;
   width: 100%;
   background-color: #ffff00;
   color: #000000;
@@ -28,11 +36,13 @@
   padding: 8px 20px;
 }
 
+.main {
+  padding: 50px 100px;
+  flex-grow: 1;
+}
+
 .footer {
-  bottom: 0px;
-  left: 0px;
-  height: 25px;
-  width: 97%;
+  margin-top: auto;
   padding: 20px;
   background-color: #2f5167;
   color: #fff;
