@@ -7,7 +7,6 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-  origin: 'https://mikan-owo.github.io',
   optionsSuccessStatus: 200
 }
 
