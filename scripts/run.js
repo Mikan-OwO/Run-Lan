@@ -14,5 +14,19 @@ $("#btn1").on("click", async function() {
       }else{
         $("#result").val(res.result).removeClass("result-content-error")
       }
-    });
+    })
+    .then(() => adjustResultBox());
 });
+
+const adjustResultBox = () => {
+  const content = document.getElementsByClassName('content')[0];
+  const result = document.getElementById('result');
+  console.log(result.style.height);
+  
+  result.style.height = "20px";
+  const scrollHeight = parseInt(result.scrollHeight);
+  
+  result.style.height = scrollHeight + "px";
+  
+  content.scrollHeight = content.scrollHeight + scrollHeight;
+}
