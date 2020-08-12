@@ -23,12 +23,8 @@ img {
   margin-bottom: 50px;
 }
 
-.contents-item {
-  float: left;
-  margin-right: 40px;
-}
-
-.content-item a {
-  font-size: 12px;
-  margin-top: 30px;
+ul.content-item li {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
 }
