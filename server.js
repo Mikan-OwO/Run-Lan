@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT;
 
-var corsOptions = {
+const corsOptions = {
   origin: 'https://mikan-owo.github.io',
   optionsSuccessStatus: 200
 }
