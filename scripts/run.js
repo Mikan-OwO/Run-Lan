@@ -1,11 +1,11 @@
 $("#btn1").on("click", async function() {
-  const test = $("textarea[name='code']").val();
+  const code = $("textarea[name='code']").val();
   fetch("https://run-lan.herokuapp.com/js", {
     method: "POST",
     headers: {
       "Content-Type": "text/plain; charset=utf-8"
     },
-    body: test
+    body: code
   })
     .then(res => res.json())
     .then(res => {
