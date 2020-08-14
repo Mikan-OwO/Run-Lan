@@ -18,6 +18,7 @@ body {
 
 .header a {
   text-decoration: none;
+  padding: 8px 40px;
 }
 
 .header-logo {
