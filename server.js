@@ -51,7 +51,7 @@ app.post("/Node", async (req, res) => {
     }
    });
   
-  const script = new VMScript(code);
+  const script = new VMScript(`module.exports = ${code}`);
   
   res.append("content-type", "application/json");
   
