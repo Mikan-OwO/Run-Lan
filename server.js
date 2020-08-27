@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { VM, NodeVM } = require("vm2");
+const { VM, NodeVM, VMScript } = require("vm2");
 const cors = require("cors");
 
 const app = express();
@@ -51,10 +51,12 @@ app.post("/Node", async (req, res) => {
     }
    });
   
+  const script = new VMScript(code);
+  
   res.append("content-type", "application/json");
   
   try {
-    const result = await vm.run(code, "Node.js");
+    const result = await vm.run(script);
     res.send({ result: String(result) });
   } catch (error) {
     res.send({ error: String(error) });
