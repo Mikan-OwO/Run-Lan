@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { VM } = require("vm2");
-const { NodeVM } = require("vm2");
+const { VM, NodeVM } = require("vm2");
 const cors = require("cors");
 
 const app = express();
