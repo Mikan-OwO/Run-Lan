@@ -55,7 +55,7 @@ app.post("/Node", async (req, res) => {
   res.append("content-type", "application/json");
   
   try {
-    const result = await vm.run(code);
+    const result = await vm.run(code, "Node.js");
     res.send({ result: String(result) });
   } catch (error) {
     res.send({ error: String(error) });
