@@ -12,7 +12,7 @@ $("#btn1").on("click", async function() {
       if(res.error){
         $("#result").val(res.error).addClass("result-content-error")
       }else{
-        $("#result").val(res.result).removeClass("result-content-error")
+        $("#result").val(String(res.result)).removeClass("result-content-error")
       }
     })
     .then(() => adjustResultBox());
@@ -32,7 +32,7 @@ $("#Node-btn1").on("click", async function() {
       if(res.error){
         $("#Node-result").val(res.error).addClass("result-content-error")
       }else{
-        $("#Node-result").val(res.result).removeClass("result-content-error")
+        $("#Node-result").val(String(res.result)).removeClass("result-content-error")
       }
     })
     .then(() => adjustResultBox());
