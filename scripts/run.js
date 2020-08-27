@@ -30,9 +30,9 @@ $("#Node-btn1").on("click", async function() {
     .then(res => res.json())
     .then(res => {
       if(res.error){
-        $("#result").val(res.error).addClass("result-content-error")
+        $("#Node-result").val(res.error).addClass("result-content-error")
       }else{
-        $("#result").val(res.result).removeClass("result-content-error")
+        $("#Node-result").val(res.result).removeClass("result-content-error")
       }
     })
     .then(() => adjustResultBox());
