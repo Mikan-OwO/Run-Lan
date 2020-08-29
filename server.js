@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { VM, NodeVM, VMScript } = require("vm2");
+const { inspect } = require("util");
 const cors = require("cors");
 
 const app = express();
@@ -27,7 +28,7 @@ app.post("/js", async (req, res) => {
   
   try {
     const result = await vm.run(`console.log = text => { const logs = []; logs.push(text); return logs.join("\\n") }; ${code}`);
-    res.send({ result: String(result) });
+    res.send({ result: inspect(result) });
   } catch (error) {
     res.send({ error: String(error) });
   }
