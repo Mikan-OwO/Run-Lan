@@ -28,7 +28,7 @@ app.post("/js", async (req, res) => {
   
   try {
     const result = await vm.run(`const logs = []; console.log = text => { logs.push(text); return logs.join("\\n") }; ${code}`);
-    res.send({ result: inspect(result) });
+    res.send({ result: String(result) });
   } catch (error) {
     res.send({ error: String(error) });
   }
@@ -58,7 +58,7 @@ app.post("/Node", async (req, res) => {
   
   try {
     const result = await vm.run(script);
-    res.send({ result: result) });
+    res.send({ result: String(result) });
   } catch (error) {
     res.send({ error: String(error) });
   }
