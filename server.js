@@ -27,7 +27,7 @@ app.post("/js", async (req, res) => {
   res.append("content-type", "application/json");
   
   try {
-    const result = await vm.run(`console.log = text => { const logs = []; logs.push(text); return logs.join("\\n") }; ${code}`);
+    const result = await vm.run(`const logs = []; console.log = text => { logs.push(text); return logs.join("\\n") }; ${code}`);
     res.send({ result: inspect(result) });
   } catch (error) {
     res.send({ error: String(error) });
@@ -58,7 +58,7 @@ app.post("/Node", async (req, res) => {
   
   try {
     const result = await vm.run(script);
-    res.send({ result: String(result) });
+    res.send({ result: result) });
   } catch (error) {
     res.send({ error: String(error) });
   }
