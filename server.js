@@ -28,7 +28,9 @@ app.post("/js", async (req, res) => {
   
   try {
     const result = await vm.run(`const logs = []; console.log = text => { logs.push(text); return logs.join("\\n") }; ${code}`);
-    res.send({ result: String(result) });
+    res.send({
+      result: String(result)
+    });
   } catch (error) {
     res.send({ error: String(error) });
   }
@@ -63,3 +65,15 @@ app.post("/Node", async (req, res) => {
     res.send({ error: String(error) });
   }
 });
+
+function isType(content) {
+  switch(typeof content) {
+    case "string":
+      return String(content);
+     break;
+      
+    default:
+      return inspect(content);
+     break;
+  }
+}
