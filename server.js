@@ -29,7 +29,7 @@ app.post("/js", async (req, res) => {
   try {
     const result = await vm.run(`const logs = []; console.log = text => { logs.push(text); return logs.join("\\n") }; ${code}`);
     res.send({
-      result: String(result)
+      result: isType(result)
     });
   } catch (error) {
     res.send({ error: String(error) });
