@@ -36,35 +36,7 @@ app.post("/js", async (req, res) => {
   }
 });
 
-app.post("/Node", async (req, res) => {
-  const code = req.body;
-  const vm = new NodeVM({
-    timeout: 5000,
-    console: 'inherit',
-    sandbox: {},
-    require: {
-    external: true,
-    builtin: ['fs', 'path'],
-    root: "./",
-    mock: {
-     fs: {
-      readFileSync() { return 'Nice try!'; }
-      }
-     }
-    }
-   });
-  
-  const script = new VMScript(`module.exports = ${code}`);
-  
-  res.append("content-type", "application/json");
-  
-  try {
-    const result = await vm.run(script);
-    res.send({ result: String(result) });
-  } catch (error) {
-    res.send({ error: String(error) });
-  }
-});
+
 
 function isType(content) {
   switch(typeof content) {
