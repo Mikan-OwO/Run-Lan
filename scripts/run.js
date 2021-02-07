@@ -32,13 +32,12 @@ $("#btn2").on("click", async () => {
     if(res.error){
       $("#result").val(res.error).addClass("result-content-error")
     }else{
-      $("#result").val(res.result).removeClass("result-content-error")
+      $("#code").val(res.result);
     }
   })
   .then(() => adjustResultBox());
 });
     
-
 const adjustResultBox = () => {
   const content = document.getElementsByClassName('content')[0];
   const result = document.getElementById('result');
