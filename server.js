@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { format } = require("prettier");
 const { VM, NodeVM, VMScript } = require("vm2");
 const { inspect } = require("util");
 const cors = require("cors");
@@ -36,7 +37,21 @@ app.post("/js", async (req, res) => {
   }
 });
 
-
+app.post("/format", async (req, res) => {
+  const code = req.body;
+  
+  res.append("content-type", "application/json");
+  
+  try {
+    const result = await format(code, { parser: "typescript" });
+    res.send({
+      result: result
+    });
+  } catch (error) {
+    res.send({ error: String(error) });
+  }
+});
+  
 
 function isType(content) {
   switch(typeof content) {
