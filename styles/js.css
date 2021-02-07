@@ -16,6 +16,12 @@
   color: #000000;
 }
 
+.format-btn {
+  float: right;
+  background-color: #ffff00;
+  color: #000000;
+}
+
 .code {
   height: 100px;
   width: 600px;
